@@ -72,13 +72,6 @@
 
       config = lib.mkIf cfg.enable {
 
-        assertions = [
-          {
-            assertion = config.boot.initrd.systemd.enable;
-            message = "ghaf-store-veritysetup-generator only works in the systemd initrd.";
-          }
-        ];
-
         boot.initrd.systemd = {
 
           contents = {
